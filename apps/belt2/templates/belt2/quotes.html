@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Destination </title>
+    <a href="/dashboard">Home<a/>
+    <a href="/">Logout<a/>
+  </head>
+  <body>
+    <p>Posts by: {{user.0.name}}</p>
+    {% for x in user.id %}
+      <p>{{x.quote.creator}}-{{x.quote.message}}</p>
+    {% endfor %}
+  </body>
+</html>

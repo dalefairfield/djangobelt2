@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Travel Dashboard </title>
+    <a href="/dashboard">Home<a/>
+    <a href="/">Logout<a/>
+  </head>
+  <body>
+    <p>Welcome {{request.session.name}}!</p>
+    {%for message in messages%}
+      <p>{{message}}<p>
+    {%endfor%}
+    <form action="/addquote" method="POST">
+      {% csrf_token %}
+      <label for="">Quote By:</label>
+      <input type="text" name="creator">
+      <label for="">Quote:</label>
+      <input type="text" name="message">
+      <input type="submit" value="ADD THIS Quote!">
+    </form>
+  </body>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Travel Dashboard </title>
+    <a href="/">Logout<a/>
+  </head>
+  <body>
+    <p>Welcome {{request.session.name}}!</p>
+
+    <h2>Quotable Quotes</h2>
+    {% for x in other_quotes %}
+      <p>{{x.creator}}-{{x.message}}<p>
+      <p>Posetd by:<a href="/user/{{x.user.id}}">{{x.user.name}}</a></p>
+      <a href="/join/{{x.id}}">Add this Quote</a>
+    {%endfor%}
+
+    <h2>Your Favorites</h2>
+    {% for x in join%}
+        <p>{{x.quote.creator}}-{{x.quote.message}}<p>
+        <p><a href="/user/{{x.user.id}}">{{x.user.name}}</a></p>
+        <a href="/join/{{x.id}}">Remove this Quote</a>
+    {%endfor%}
+
+    <h1>Contribute a Quote!</h1>
+    <h1><a href="/addquote">Add a quote</a></h1>
+  </body>
+  </body>
+</html>
